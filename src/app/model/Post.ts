@@ -8,13 +8,10 @@ export class Post {
         this.title = title;
         this.content = content;
         this.loveIts = loveIts;
-        this.created_at = this.randomDate(2000, 2018, 0, 23);
+        this.created_at = this.randomDate();
     }
 
-    randomDate(start, end, startHour, endHour) {
-        var date = new Date(+start + Math.random() * (end - start));
-        var hour = startHour + Math.random() * (endHour - startHour) | 0;
-        date.setHours(hour);
-        return date;
+    randomDate() {
+        return new Date(Math.floor((Math.random() * 18)) + 2000, Math.floor((Math.random() * 11) + 1), Math.floor((Math.random() * 28) + 1));
     }
 }
